@@ -96,19 +96,45 @@ namespace Ejercicio_1
                 opcion = MostrarPantallaSolicitarOpcionMenu();
                 switch (opcion)
                 {
-                    case 1: MostrarPantallaSolicitarNumero(); break;
-                    case 2: MostrarPantallaSolicitarVariosNumeros(); break;
-                    case 3: MostrarPantallaMostrarMaximo(); break;
-                    case 4: MostrarPantallaMostrarMinimo(); break;
-                    case 5: MostrarPantallaMostrarPromedio(); break;
-                    case 6: MostrarCantidadDeNumerosIngresados(); break;
-                    case 7: ReiniciarVariables(); break;
-                    case 8: Console.WriteLine("Saliendo..."); Thread.Sleep(500); break;
+                    case 1:
+                        {
+                            MostrarPantallaSolicitarNumero(); break;
+                        }
+                    case 2:
+                        {
+                            MostrarPantallaSolicitarVariosNumeros(); break;
+                        }
+                    case 3:
+                        {
+                            MostrarPantallaMostrarMaximo(); break;
+                        }
+                    case 4:
+                        {
+                            MostrarPantallaMostrarMinimo(); break;
+                        }
+                    case 5:
+                        {
+                            MostrarPantallaMostrarPromedio(); break;
+                        }
+                    case 6:
+                        {
+                            MostrarCantidadDeNumerosIngresados(); break;
+                        }
+                    case 7:
+                        {
+                            ReiniciarVariables(); break;
+                        }
+                    case 8:
+                        {
+                            Console.WriteLine("Saliendo..."); Thread.Sleep(500); break;
+                        }
                     default:
-                        Console.WriteLine("Opcion invalida");
-                        Console.WriteLine("Redirigiendo al menu de opciones...");
-                        Thread.Sleep(2500);
-                        break;
+                        {
+                            Console.WriteLine("Opcion invalida");
+                            Console.WriteLine("Redirigiendo al menu de opciones...");
+                            Thread.Sleep(2500);
+                            break;
+                        }
                 }
             }
             while (opcion != 8);

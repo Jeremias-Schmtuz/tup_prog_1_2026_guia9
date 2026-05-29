@@ -9,7 +9,7 @@ namespace Ejercicio_1
 {
     internal class Servicio
     {
-        #region Variables
+        #region Variables "INSTANCIA"
         private int acumulador;
         public int contador;
         public int maximo;
