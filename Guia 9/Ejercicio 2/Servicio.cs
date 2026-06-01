@@ -8,24 +8,15 @@ namespace Ejercicio_2
 {
     internal class Servicio
     {
-
         #region Varibales "INSTANCIA" 
-        public int edad0;
-        public int edad1;
-        public int edad2;
-        public int edad3;
+
+        public int[] edades = new int [4];
+        public double[] porcentajes = new double [4];
+        public double[] montos = new double [4];
         public double monto;
-        public double porcentaje0;
-        public double porcentaje1;
-        public double porcentaje2;
-        public double porcentaje3;
-        public double monto0;
-        public double monto1;
-        public double monto2;
-        public double monto3;
         #endregion
 
-        #region
+        #region REGISTRAR MONTO A REPARTIR
         public void RegistrarMontoARepartir(double monto)
         {
             this.monto = monto;
@@ -36,29 +27,30 @@ namespace Ejercicio_2
         public void RegistrarEdad(int edad, int nroNiña)
         {
             if (nroNiña == 0)
-                edad0 = edad;
+                edades[ 0] = edad;
             else if (nroNiña == 1)
-                edad1 = edad;
+                edades[1] = edad;
             else if (nroNiña == 2)
-                edad2 = edad;
+                edades[2] = edad;
             else if (nroNiña == 3)
-                edad3 = edad;
+                edades[3] = edad;
         }
         #endregion
 
+        #region CALCULAR MONTOS Y PORCENTAJES A REPARTIR
         public void CalcularMontosYPorcentajesARepartir()
         {
-            int sumaEdades = edad0 + edad1 + edad2 + edad3;
-
-            porcentaje0 = (double)edad0 / sumaEdades * 100;
-            porcentaje1 = (double)edad1 / sumaEdades * 100;
-            porcentaje2 = (double)edad2 / sumaEdades * 100;
-            porcentaje3 = (double)edad3 / sumaEdades * 100;
-
-            monto0 = monto * porcentaje0 / 100;
-            monto1 = monto * porcentaje1 / 100;
-            monto2 = monto * porcentaje2 / 100;
-            monto3 = monto * porcentaje3 / 100;
+            int sumaEdades = 0;
+            for (int a = 0; a < 4; a++)
+            {
+                sumaEdades += edades[a];
+            }
+            for(int i = 0; i < 4; i++)
+            {
+                porcentajes[i] = (double)edades[i] / sumaEdades * 100;
+                montos[i] = monto * porcentajes[i] / 100;
+            }
         }
+        #endregion
     }
 }

@@ -10,6 +10,8 @@ namespace Ejercicio_2
     internal class Program
     {
         static Servicio servicio = new Servicio();
+
+        #region SOLICITAR OPCION MENU
         static int MostrarPantallaSolicitarOpcionMenu()
         {
             Console.Clear();
@@ -20,7 +22,9 @@ namespace Ejercicio_2
             int opcion = Convert.ToInt32(Console.ReadLine());
             return opcion;
         }
+        #endregion
 
+        #region SOLICITAR MONTO A REPARTIR
         static void MostrarPantallaSolicitarMontoARepartir()
         {
             Console.Clear();
@@ -28,7 +32,9 @@ namespace Ejercicio_2
             double monto = double.Parse(Console.ReadLine());
             servicio.RegistrarMontoARepartir(monto);
         }
+        #endregion
 
+        #region SOLICITAR EDADES DE LAS NIÑAS
         static void MostrarPantallaSolicitarEdadesNiñas()
         {
             Console.Clear();
@@ -45,18 +51,21 @@ namespace Ejercicio_2
             edad = int.Parse(Console.ReadLine());
             servicio.RegistrarEdad(edad, 3);
         }
+        #endregion
 
+        #region CALCULAR Y MOSTRAR MONTO Y PORCENTAJE POR NIÑA
         static void MostrarPantallaCalcularMostrarMontoYPorcentajePorNiña()
         {
             Console.Clear();
             servicio.CalcularMontosYPorcentajesARepartir();
-            Console.WriteLine($"Ana Paula - Porcentaje: {servicio.porcentaje0:F2}%  Monto: ${servicio.monto0:F2}");
-            Console.WriteLine($"Lucía - Porcentaje: {servicio.porcentaje1:F2}%  Monto: ${servicio.monto1:F2}");
-            Console.WriteLine($"Milena - Porcentaje: {servicio.porcentaje2:F2}%  Monto: ${servicio.monto2:F2}");
-            Console.WriteLine($"Jazmín - Porcentaje: {servicio.porcentaje3:F2}%  Monto: ${servicio.monto3:F2}");
+            Console.WriteLine($"Ana Paula - Porcentaje: {servicio.porcentajes[0]:F2}%  Monto: ${servicio.montos[0]:F2}");
+            Console.WriteLine($"Lucía - Porcentaje: {servicio.porcentajes[1]:F2}%  Monto: ${servicio.montos[1]:F2}");
+            Console.WriteLine($"Milena - Porcentaje: {servicio.porcentajes[2]:F2}%  Monto: ${servicio.montos[2]:F2}");
+            Console.WriteLine($"Jazmín - Porcentaje: {servicio.porcentajes[3]:F2}%  Monto: ${servicio.montos[3]:F2}");
             Console.WriteLine("\nPresione una tecla para volver al menú...");
             Console.ReadKey();
         }
+        #endregion
 
         static void Main(string[] args)
         {
