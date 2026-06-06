@@ -47,6 +47,7 @@ namespace Ejercicio_4
             servicio.RegistrarResultadoSet(resultado1, resultado2);
         }
         #endregion
+
         #region MOSTRAR GANADOR
         static void MostrarPantallaGanador()
         {

@@ -27,7 +27,7 @@ namespace Ejercicio_2
         public void RegistrarEdad(int edad, int nroNiña)
         {
             if (nroNiña == 0)
-                edades[ 0] = edad;
+                edades[0] = edad;
             else if (nroNiña == 1)
                 edades[1] = edad;
             else if (nroNiña == 2)
