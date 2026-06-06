@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Ejercicio_7
@@ -50,8 +51,60 @@ namespace Ejercicio_7
             Console.WriteLine($"Rubro 5: {servicio.porcentajeCantidadRubro[4]} %");
         }
         #endregion
+
+        #region TRANSACCION MAYOR MONTO
+        static void MostrarPantallaTransaccionMayorMonto()
+        {
+            Console.WriteLine("Numero de transaccion: " + servicio.numeroTransaccionMayor);
+            Console.WriteLine("Monto: " + servicio.montoTransaccionMayor);
+        }
+        #endregion
+
+        #region MONTO RECAUDADO TOTAL
+        static void MostrarPantallaMontoRecaudadoTotal()
+        {
+            Console.WriteLine("Recaudacion total: " + servicio.recaudacionTotal);
+        }
+        #endregion
+
         static void Main(string[] args)
         {
+            int opcion;
+            do
+            {
+                opcion = MostrarPantallaSolicitarOpcionMenu();
+                switch (opcion)
+                {
+                    case 1:
+                        {
+                            MostrarPantallaRegistrarTransaccion(); break;
+                        }
+                    case 2:
+                        {
+                            MostrarPantallaPorcentajeDeCantidadesPorRubro(); break;
+                        }
+                    case 3:
+                        {
+                            MostrarPantallaTransaccionMayorMonto(); break;
+                        }
+                    case 4:
+                        {
+                            MostrarPantallaMontoRecaudadoTotal(); break;
+                        }
+                    case 5:
+                        {
+                            Console.WriteLine("Saliendo...");
+                            Thread.Sleep(2500); break;
+                        }
+                    default:
+                        {
+                            Console.WriteLine("Opcion invalida.");
+                            Console.WriteLine("Precione cualquier tecla volver al menu de opciones");
+                            Console.ReadKey(); break;
+                        }
+                }
+            }
+            while (opcion != 5);
         }
     }
 }
